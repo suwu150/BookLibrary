@@ -15,6 +15,7 @@
     "react-native-dismiss-keyboard": "^1.0.0",
     "react-native-string-distinction": "^1.0.2",
     "react-native-swipe-cards": "^0.1.1",
+    "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^2.3.1"
   },
   "devDependencies": {

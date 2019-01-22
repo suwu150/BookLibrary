@@ -6,8 +6,13 @@ import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import { Tabs } from 'antd-mobile-rn';
 import Button from 'react-native-customer-button';
 import StringDistinction from 'react-native-string-distinction';
+import Icon from 'react-native-vector-icons/Ionicons';
 import styleDict from '../../constants/styleDict';
 
+import Libirary from '../library';
+import Spirtuality from '../spirtuality';
+import Encyclopedia from '../encyclopedia';
+import Local from '../local';
 const tabs = [
   { sub: '1', title: '书库' },
   { sub: '2', title: '灵修' },
@@ -25,24 +30,36 @@ export default class Home extends Component {
     const itemWidth = styleDict.windowW / 2;
     const itemHeight = styleDict.windowH - 10;
     return (
-      <View style={{ flex: 1, paddingVertical: 50 }}>
-        <View style={{ flexDirection: 'row', justifyContent: 'center', width: styleDict.windowW }} >
-          <Button
-            style={{ width: 50 }}
-            title="搜索内容"
+      <View style={{ flex: 1, paddingTop: 50, alignItems: 'center' }}>
+        <View style={{ flexDirection: 'row', paddingLeft: 20, width: styleDict.windowW, justifyContent: 'center',
+        alignItems: 'center', marginBottom: 10 }}
+        >
+          <View style={{ flexDirection: 'row', justifyContent: 'center',
+            borderWidth: 1, borderColor: '#999693', height: 38 }}
+          >
+            <Button
+              style={{ width: 70, height: '100%', backgroundColor: '#cfccc9' }}
+              title="搜索内容"
+            />
+            <TextInput
+              placeholder="搜索，如：隐形的珍宝"
+              value={''}
+              style={{ width: 180, paddingLeft: 10 }}
+            />
+            <Button
+              style={{ width: 50, height: '100%', backgroundColor: '#00b300' }}
+              textStyle={{ color: '#fff' }}
+              title="搜索"
+            />
+          </View>
+          <Icon
+            style={{ width: 30, height: 30, marginLeft: 10 }}
+            name="ios-settings-outline"
+            size={28}
+            color="#999693"
           />
-          <TextInput
-            placeholder="搜索，如：隐形的珍宝"
-            value={''}
-            style={{ width: styleDict.windowW - 150 }}
-          />
-          <Button
-            style={{ width: 50 }}
-            title="搜索"
-          />
-          <Image />
         </View>
-        <View>
+        <View style={{ flex: 1 }}>
           <Tabs
             tabs={tabs}
             initialPage={'1'}
@@ -58,7 +75,10 @@ export default class Home extends Component {
             tabBarUnderlineStyle={{ backgroundColor: styleDict.colorSet.mainColor }}
             renderTabBar={props => <Tabs.DefaultTabBar {...props} page={4} animated={false} />}
           >
-            <Text>dsfds</Text>
+            <Libirary />
+            <Spirtuality />
+            <Encyclopedia />
+            <Local />
           </Tabs>
 
         </View>

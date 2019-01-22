@@ -12,11 +12,15 @@ const stackNavigatorConfig = {
     header: null,
     headerTitleStyle: {
       fontWeight: 'bold',
-      color: '#000000'
+      color: '#000000',
+    },
+    headerStyle: {
+      fontWeight: 'bold',
+      color: '#000000',
     }
   },
   mode: 'card',
-  headerMode: 'float',
+  headerMode: 'none',
 };
 
 export {
