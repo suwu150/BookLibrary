@@ -64,7 +64,7 @@ export default class Library extends Component {
           >
             {source.map(item => {
               return (
-                <View style={{ height: 150 }}>
+                <View style={{ height: 150 }} key={item.uri}>
                   <Image source={item} style={{ height: 150, width: styleDict.windowW }} />
                 </View>
               );

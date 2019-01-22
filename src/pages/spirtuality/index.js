@@ -70,7 +70,7 @@ export default class Spirtuality extends Component {
     return (
       sliceData && sliceData.length > 0 && sliceData.map((item) => {
         return (
-          <View style={{ width: ItemWidth, height: 40 }}>
+          <View style={{ width: ItemWidth, height: 40 }} key={item.id}>
             <Text>{item.name}</Text>
             <Text>{item.describe}</Text>
           </View>

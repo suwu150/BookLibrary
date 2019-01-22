@@ -23,13 +23,6 @@ const tabs = [
 ];
 
 export default class Home extends Component {
-  // header: null,
-  // static navigationOptions = () => {
-  //   return {
-  //     header: null
-  //   };
-  // };
-
   _toContent = (gender) => {
     const { navigation } = this.props;
     navigation.navigate('Content', { gender });

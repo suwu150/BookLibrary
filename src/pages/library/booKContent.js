@@ -46,7 +46,7 @@ export default class ViewGraph extends Component {
               }
             }}
           >
-            <IconFeather name="share-2" size={22} color="#fff" />
+            <IconFeather name="share-2" size={22} color="#000" />
           </TouchableOpacity>
         </View>
       ),
