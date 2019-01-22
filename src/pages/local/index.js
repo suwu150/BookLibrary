@@ -3,16 +3,30 @@
  */
 import React, { Component } from 'react';
 import {
-  FlatList,
+  FlatList, TouchableOpacity,
   View,
   Text
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import RNFileSelector from 'react-native-file-selector';
 import styleDict from '../../constants/styleDict';
 
 const data = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
 
 export default class Local extends Component {
+
+  _openFileSystem = () => {
+    // RNFileSelector.Show(
+    //   {
+    //     title: 'Select File',
+    //     onDone: (path) => {
+    //       console.log('file selected: ' + path);
+    //     },
+    //     onCancel: () => {
+    //       console.log('cancelled');
+    //     }
+    //   });
+  };
   _renderButtonGroup = () => {
     const itemWidth = (styleDict.windowW - 30) / 3;
     return (
@@ -32,10 +46,12 @@ export default class Local extends Component {
             color="#608cff"
           />
         </View>
-        <View style={{ width: itemWidth, alignItems: 'flex-end' }}>
-          <Icon name="folder-open" size={24} color="#608cff" />
-          <Text>文件</Text>
-        </View>
+        <TouchableOpacity onPress={this._openFileSystem}>
+          <View style={{ width: itemWidth, alignItems: 'flex-end' }}>
+            <Icon name="folder-open" size={24} color="#608cff" />
+            <Text>文件</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     );
   };

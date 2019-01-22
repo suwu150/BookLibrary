@@ -3,6 +3,7 @@ package com.booklibrary;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import ui.fileselector.RNFileSelectorPackage;
 import cl.json.RNSharePackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import org.wonday.pdf.RCTPdfView;
@@ -27,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNFileSelectorPackage(),
             new RNSharePackage(),
             new RNFetchBlobPackage(),
             new RCTPdfView(),
