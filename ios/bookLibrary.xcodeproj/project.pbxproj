@@ -21,6 +21,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1AAD125D21F7638D00B2D99D /* FileProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAD125C21F7638D00B2D99D /* FileProvider.framework */; };
+		1AAD129A21F76E2500B2D99D /* FileBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAD129921F76E2500B2D99D /* FileBrowser.framework */; };
 		24088264F4AD406AA8F88216 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6425A5CC90474E91AD9FB2 /* libRNVectorIcons.a */; };
 		3EB4FA17608E44CDBD36D250 /* libRCTPdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 574F0057C7E944DF83B58530 /* libRCTPdf.a */; };
 		4531DC985DB048A7A2BDDED4 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4F9F9705B1D463B9584884F /* Feather.ttf */; };
@@ -358,6 +359,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		195A47D68BB54E9A8D8130CC /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		1AAD125C21F7638D00B2D99D /* FileProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FileProvider.framework; path = System/Library/Frameworks/FileProvider.framework; sourceTree = SDKROOT; };
+		1AAD129921F76E2500B2D99D /* FileBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FileBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C7C1C3519C4AE3B9D3CBD9 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		32165891C46445858194C04E /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AAD129A21F76E2500B2D99D /* FileBrowser.framework in Frameworks */,
 				1AAD125D21F7638D00B2D99D /* FileProvider.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
@@ -565,6 +568,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AAD129921F76E2500B2D99D /* FileBrowser.framework */,
 				1AAD125C21F7638D00B2D99D /* FileProvider.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);

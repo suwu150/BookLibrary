@@ -6,7 +6,6 @@ import BooKContent from './pages/library/booKContent';
 
 const stackConfig = {
   Home: { screen: Home },
-  Content: { screen: Content },
   BooKContent: { screen: BooKContent },
 };
 
