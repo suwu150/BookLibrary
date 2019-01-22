@@ -2,7 +2,7 @@
  * Created by jkwu on 2018/6/22.
  */
 import React, { Component } from 'react';
-import { Tabs, Carousel } from 'antd-mobile-rn';
+import { Tabs } from 'antd-mobile-rn';
 import {
   FlatList,
   Text,

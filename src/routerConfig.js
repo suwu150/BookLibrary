@@ -1,7 +1,6 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import Home from './pages/home';
-import Content from './pages/content';
 import BooKContent from './pages/library/booKContent';
 
 
