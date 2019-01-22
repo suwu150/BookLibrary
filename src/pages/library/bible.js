@@ -6,9 +6,11 @@ import { Tabs } from 'antd-mobile-rn';
 import {
   FlatList,
   Text,
-  View,
+  View, TouchableOpacity, Platform, Share, Alert
 } from 'react-native';
 import styleDict from '../../constants/styleDict';
+import RNShare from "react-native-share";
+import IconFeather from "./booKContent";
 
 const tabs = [
   { sub: '1', title: '全部' },
@@ -19,6 +21,41 @@ const tabs = [
 const data = [{}, {}, {}, {}, {}];
 
 export default class Bible extends Component {
+  static navigationOptions = ({ navigation }) => {
+    const { state } = navigation;
+    const { item } = state.params;
+    return {
+      title: `${item.name || ''}.pdf`,
+      headerRight: (
+        <View style={{ marginRight: 15 }}>
+          <TouchableOpacity
+            onPress={() => {
+              if (Platform.OS === 'ios') {
+                Share.share({ url: item.path, title: `${item.name || '='}.pdf` })
+                  .then((res) => { console.log(res); })
+                  .catch((error) => Alert.alert('分享出错', error.message));
+              } else {
+                const options = {
+                  url: `file://${item.path}`,
+                  type: 'application/pdf',
+                  showAppsToView: true,
+                  title: `${item.name || '-'}`
+                };
+                RNShare.open(options)
+                  .then((res) => { console.log(res); })
+                  .catch((err) => {
+                    err && Alert.alert('分享出错', err.message);
+                  });
+              }
+            }}
+          >
+            <IconFeather name="share-2" size={22} color="#fff" />
+          </TouchableOpacity>
+        </View>
+      ),
+    };
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -26,17 +63,24 @@ export default class Bible extends Component {
     };
   }
 
+  _toPage = () => {
+    const { navigation } = this.props;
+    navigation.navigate('BooKContent', { item: { name: '' }});
+  };
+
   _renderItem = () => {
     return (
-      <View style={{ paddingHorizontal: 15, paddingVertical: 10, backgroundColor: '#fff', marginBottom: 3 }}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Text>创世纪</Text>
-          <Text>摩西</Text>
+      <TouchableOpacity onPress={() => this._toPage()}>
+        <View style={{ paddingHorizontal: 15, paddingVertical: 10, backgroundColor: '#fff', marginBottom: 3 }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <Text>创世纪</Text>
+            <Text>摩西</Text>
+          </View>
+          <Text style={{ marginTop: 5 }}>
+            在世界文明史上，犹太教对公元前后崛起的基督教的形成，入《圣经》。《圣经》由两部分组成：旧约全书和新
+          </Text>
         </View>
-        <Text style={{ marginTop: 5 }}>
-          在世界文明史上，犹太教对公元前后崛起的基督教的形成，入《圣经》。《圣经》由两部分组成：旧约全书和新
-        </Text>
-      </View>
+      </TouchableOpacity>
     );
   };
 

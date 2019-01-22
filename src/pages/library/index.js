@@ -12,15 +12,17 @@ import styleDict from '../../constants/styleDict';
 
 import Bible from './bible';
 import Conceived from './conceived';
+import Libirary from "../home";
 
 const tabs = [
   { sub: '1', title: '圣经' },
   { sub: '2', title: '怀著' },
 ];
 const source = [
-  { uri: 'https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png', width: 38, height: 38 },
-  { uri: 'https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png', width: 76, height: 76 },
-  { uri: 'https://zos.alipayobjects.com/rmsportal/QcWDkUhvYIVEcvtosxMF.png', width: 400, height: 400 }
+  { uri: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548154663931&di=25efee35594509535ec83a0421af710f&imgtype=0&src=http%3A%2F%2Fpic13.photophoto.cn%2F20091205%2F0017029386319083_b.jpg', width: 38, height: 38 },
+  { uri: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548154663931&di=222b6a32293fead1cdded4df0c6b6079&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0167325778b14c0000012e7e743eaa.jpg%401280w_1l_2o_100sh.jpg', width: 76, height: 76 },
+  { uri: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548154663930&di=fb0632701d03b40d730f5d1771336009&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F15%2F36%2F57%2F03358PICK7i_1024.jpg', width: 400, height: 400 },
+  { uri: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548154663931&di=a5cdeba6a34758f10791109536f52e58&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01d250563b2b7132f87512f6c7afc5.jpg%401280w_1l_2o_100sh.jpg', width: 400, height: 400 },
 ];
 
 export default class Library extends Component {
@@ -84,8 +86,8 @@ export default class Library extends Component {
           tabBarUnderlineStyle={{ backgroundColor: styleDict.colorSet.mainColor }}
           renderTabBar={props => <Tabs.DefaultTabBar {...props} page={4} animated={false} />}
         >
-          <Bible />
-          <Conceived />
+          <Bible navigation={this.props.navigation} />
+          <Conceived navigation={this.props.navigation} />
         </Tabs>
       </View>
     );

@@ -2,7 +2,7 @@
  * Created by jkwu on 2018/6/18.
  */
 import React, { Component } from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity, Platform, Share, Alert } from 'react-native';
 import { Tabs } from 'antd-mobile-rn';
 import Button from 'react-native-customer-button';
 import StringDistinction from 'react-native-string-distinction';
@@ -13,6 +13,8 @@ import Libirary from '../library';
 import Spirtuality from '../spirtuality';
 import Encyclopedia from '../encyclopedia';
 import Local from '../local';
+import RNShare from "react-native-share";
+import IconFeather from "../library/booKContent";
 const tabs = [
   { sub: '1', title: '书库' },
   { sub: '2', title: '灵修' },
@@ -21,6 +23,13 @@ const tabs = [
 ];
 
 export default class Home extends Component {
+  // header: null,
+  // static navigationOptions = () => {
+  //   return {
+  //     header: null
+  //   };
+  // };
+
   _toContent = (gender) => {
     const { navigation } = this.props;
     navigation.navigate('Content', { gender });
@@ -30,9 +39,9 @@ export default class Home extends Component {
     const itemWidth = styleDict.windowW / 2;
     const itemHeight = styleDict.windowH - 10;
     return (
-      <View style={{ flex: 1, paddingTop: 50, alignItems: 'center' }}>
-        <View style={{ flexDirection: 'row', paddingLeft: 20, width: styleDict.windowW, justifyContent: 'center',
-        alignItems: 'center', marginBottom: 10 }}
+      <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#fff' }}>
+        <View style={{ flexDirection: 'row', paddingLeft: 10, width: styleDict.windowW, justifyContent: 'center',
+          backgroundColor: '#fff', alignItems: 'center', marginBottom: 10 }}
         >
           <View style={{ flexDirection: 'row', justifyContent: 'center',
             borderWidth: 1, borderColor: '#999693', height: 38 }}
@@ -75,12 +84,11 @@ export default class Home extends Component {
             tabBarUnderlineStyle={{ backgroundColor: styleDict.colorSet.mainColor }}
             renderTabBar={props => <Tabs.DefaultTabBar {...props} page={4} animated={false} />}
           >
-            <Libirary />
-            <Spirtuality />
-            <Encyclopedia />
-            <Local />
+            <Libirary navigation={this.props.navigation} />
+            <Spirtuality navigation={this.props.navigation} />
+            <Encyclopedia navigation={this.props.navigation} />
+            <Local navigation={this.props.navigation} />
           </Tabs>
-
         </View>
       </View>
     );
